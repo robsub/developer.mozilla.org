@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas tutorial</title>
+    <script>
+
+// Draw function:
+
+      function drawROB() { // function called draw() (I have renamed it drawROB and updated <body onload="drawROB();"> ), which is executed once the page finishes loading; this is done by listening for the load event on the document. This function, or one like it, could also be called using setTimeout(), setInterval(), or any other event handler, as long as the page has been loaded first.
+        const canvas = document.getElementById("tutorial");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+        	
+          ctx.fillStyle = "rgb(200, 0, 0)"; // draws two intersecting rectangles, one of which has alpha transparency
+          ctx.fillRect(10, 10, 50, 50);
+          ctx.strokeRect(10, 10, 50, 50);
+          ctx.strokeStyle = "green";
+          ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+          ctx.fillRect(30, 30, 50, 50);
+          ctx.clearRect(15, 15, 60, 60 )
+
+        }
+      }
+
+    </script>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body onload="drawROB();">
+    <canvas id="tutorial" width="150" height="150"></canvas>
+  </body>
+</html>
+
+
